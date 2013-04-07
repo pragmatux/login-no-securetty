@@ -1,0 +1,18 @@
+Source: login-no-securetty
+Section: admin
+Priority: extra
+Maintainer: Ryan Kuester <rkuester@insymbols.com>
+Build-Depends: debhelper (>= 8.0.0), config-package-dev (>= 5.0)
+Standards-Version: 3.9.3
+Vcs-Git: http://git.pragmatux.org/login-no-securetty.git
+Vcs-Browser: http://git.pragmatux.org/login-no-securetty.git
+
+Package: login-no-securetty
+Architecture: all
+Depends: ${misc:Depends}
+Provides: ${diverted-files}
+Conflicts: ${diverted-files}
+Description: Hide login's securetty file
+ This package diverts and does not replace the login package's
+ /etc/securetty file. When securetty is not found, pam_securetty allows root
+ to login on all ttys.
